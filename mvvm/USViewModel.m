@@ -39,7 +39,7 @@
         
         // binding to model
         RAC(self, name) = RACObserve(self, model.name);
-        RAC(self, secretSet) = [RACObserve(self, model.secret) map:^NSNumber *(NSString *secret) {
+        RAC(self, preventSecretInput) = [RACObserve(self, model.secret) map:^NSNumber *(NSString *secret) {
             return @(secret != nil);
         }];
     }

@@ -11,6 +11,7 @@
 
 @class USModel;
 
+
 typedef void(^USAPIModelCompletionHandler)(USModel *model, NSError *error);
 
 

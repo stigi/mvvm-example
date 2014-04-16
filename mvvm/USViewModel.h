@@ -20,7 +20,7 @@
 #pragma mark - Properties
 
 @property (readonly) NSString *name;
-@property (readonly, getter=hasSecretSet) BOOL secretSet;
+@property (readonly) BOOL preventSecretInput;
 
 @property (readonly, getter=isLoading) BOOL loading;
 

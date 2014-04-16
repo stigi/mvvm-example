@@ -70,13 +70,13 @@
     RAC(self.nameField, text) = RACObserve(self.viewModel, name);
     
     // bind secret
-    RAC(self.nameField, returnKeyType) = [RACObserve(self.viewModel, secretSet) map:^id(NSNumber *secretSet) {
+    RAC(self.nameField, returnKeyType) = [RACObserve(self.viewModel, preventSecretInput) map:^id(NSNumber *secretSet) {
         if (secretSet.boolValue) {
             return @(UIReturnKeySend);
         }
         return @(UIReturnKeyNext);
     }];
-    RAC(self.hideSecretLayoutConstraint, priority) = [RACObserve(self.viewModel, secretSet) map:^NSNumber *(NSNumber *secretSet) {
+    RAC(self.hideSecretLayoutConstraint, priority) = [RACObserve(self.viewModel, preventSecretInput) map:^NSNumber *(NSNumber *secretSet) {
         if (secretSet.boolValue) {
             return @(UILayoutPriorityRequired - 1);
         }
